@@ -1,0 +1,26 @@
+{
+  "name": "timer-precise",
+  "keywords": [
+    "timer",
+    "time",
+    "timing",
+    "countdown",
+    "timer-precise",
+    "计时",
+    "倒计时",
+    "精准",
+    "精确"
+  ],
+  "version": "1.2.0",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "lib": "rm -rf lib && tsc -d"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}

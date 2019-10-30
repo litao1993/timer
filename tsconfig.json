@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "sourceMap": true,
+    "module": "umd",
+    "experimentalDecorators": true,
+    "target": "es5",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "preserveSymlinks": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  },
+  "include": ["src/**/*"]
+}

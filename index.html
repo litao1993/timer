@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>countdown</title>
+    <script src="https://cdn.bootcss.com/require.js/2.3.6/require.js"></script>
+  </head>
+  <body>
+    <button id="start">开始</button>
+
+    <button id="stop">暂停</button>
+
+    <button id="reset">复位(销毁)</button>
+
+    <br /><br />
+    <div id="after"></div>
+
+    <br />
+    <div id="before"></div>
+
+    <script>
+      require(["./lib/index.js"], function({ default: Timer }) {
+        const timer = new Timer({
+          duration: 60,
+          interval: 500,
+          callback: time => {
+            console.log(time);
+            document.querySelector("#before").innerHTML =
+              JSON.stringify(time.before) + "</br>" + time.msBefore;
+            document.querySelector("#after").innerHTML =
+              JSON.stringify(time.after) + "</br>" + time.msAfter;
+          }
+        });
+
+        document.getElementById("start").addEventListener("click", () => {
+          timer.start();
+        });
+
+        document.getElementById("stop").addEventListener("click", () => {
+          timer.stop();
+        });
+
+        document.getElementById("reset").addEventListener("click", () => {
+          timer.reset();
+          document.querySelector("#before").innerHTML = "";
+          document.querySelector("#after").innerHTML = "";
+        });
+      });
+    </script>
+  </body>
+</html>
